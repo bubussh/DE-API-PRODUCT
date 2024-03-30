@@ -1,0 +1,23 @@
+# Credentials
+.env 
+
+# Temporary files
+*.txt
+!requirements.txt
+/*.py
+
+# Airflow
+airflow/logs/
+airflow/webserver_config.py
+airflow/airflow.cfg
+
+# Python
+__pycache__/
+.python-version
+
+# Enviroment
+venv/
+
+# Mac OS-specific storage files
+.DS_Store
+
