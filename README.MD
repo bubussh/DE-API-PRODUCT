@@ -5,8 +5,8 @@
 `Yandex Cloud`, `Airflow`, `PostgreSQL`, `Yandex DataLens`
 
 Мониторинг появления отзывов на товары из маркейтплейса - демонстрация дашборда.
-## Архитектура проекта
-`НАРИСОВАТЬ СХЕМУ`  
+## Архитектура проекта 
+![архитектура проекта](https://github.com/bubussh/DE-API-PRODUCT/assets/93825972/ef54680f-1eb9-4cc8-8dbf-97a53c32dd7e)  
 DAG *"dag_product_project"* отвечает за ежедневное получение данных из системы источника и запись этих данных в таблицу count_feedbacks.  Поля таблицы:
 * date  - дата (logical date of dag run);
 * id - артикул товара;
