@@ -40,7 +40,7 @@ DAG *"dag_dynamic_calculations"* отвечает за ежедневное вы
 ‎3. Устанавливаем Airflow с constraints file (в проекте Python 3.11 и Airflow 2.8.3)  
     `pip install 'apache-airflow==2.8.3' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.8.3/constraints-3.11.txt"`  
 ‎4. Инициализируем базу данных Airflow (по умолчанию используется SQLite).  
-    `airflow migrate`
+    `airflow migrate`  
 ‎5. В проекте в качестве бэкенда для хранения метаданных Airflow используется PostgreSQL. Создаем базу данных и пользователя c помощью консольной утилиты *psql* (локально). 
     ```sql
     CREATE DATABASE airflow_db;  
@@ -49,13 +49,11 @@ DAG *"dag_dynamic_calculations"* отвечает за ежедневное вы
     -- PostgreSQL 15 requires additional privileges:
     \c airflow_db;
     GRANT ALL ON SCHEMA public TO airflow_user;
-    ```
-‎6. Изменить значения параметров в конфигурационном файле AIRFLOW_HOME/airflow.cfg 
-    ```
-    sql_alchemy_conn = postgresql+psycopg2://<user>:<password>@<host>/<db>
-    load_examples = False
-    load_default_connections = False
-    executor = LocalExecutor
-    ```
+    ```  
+    ‎6. Изменить значения параметров в конфигурационном файле AIRFLOW_HOME/airflow.cfg  
+    `sql_alchemy_conn = postgresql+psycopg2://<user>:<password>@<host>/<db>`  
+    `load_examples = False`  
+    `load_default_connections = False`  
+    `executor = LocalExecutor`  
 * Для использования подзапроса SQL в качестве источника в Yandex DataLens необходимо включить опцию *Уровень доступа SQL запросов -> Разрешить подзапросы в датасетах при создании и редактировании* при создании и редактировании подключения в Yandex DataLens.
 ## Визуализация данных в DataLens
