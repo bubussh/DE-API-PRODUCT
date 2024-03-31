@@ -46,13 +46,13 @@ def dynamic_feedback():
     def validate_data_in_source_table(**context):
         """Check arrival of actual data in source table."""
         ds_date = context["ds"]
+        logging.info(f"The DAG run’s logical date is {ds_date}")
+
         pg_hook = PostgresHook(POSTGRES_CONN_ID)
         conn = pg_hook.get_conn()
         cursor = conn.cursor()
 
-        logging.info(f"ds {ds_date}")
         validation_query = f"SELECT * FROM {SOURCE_TABLE_NAME} WHERE DATE = '{ds_date}';"
-
         cursor.execute(validation_query)
         row_count = cursor.rowcount
 
