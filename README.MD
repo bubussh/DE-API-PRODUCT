@@ -57,3 +57,4 @@ DAG *"dag_dynamic_calculations"* отвечает за ежедневное вы
     `executor = LocalExecutor`  
 * Для использования подзапроса SQL в качестве источника в Yandex DataLens необходимо включить опцию *Уровень доступа SQL запросов -> Разрешить подзапросы в датасетах при создании и редактировании* при создании и редактировании подключения в Yandex DataLens.
 ## Визуализация данных в DataLens
+![Дашборд](https://github.com/bubussh/DE-API-PRODUCT/assets/93825972/286f954d-05df-4ee7-95b0-a97b77910c38)
